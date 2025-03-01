@@ -1,8 +1,8 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import Button from './Button';
+import { render, screen } from '@testing-library/react';
+import Header from '../components/Header';
 
-test('Affiche le label du bouton', () => {
-	render(<Button label='clique-moi' />);
-	const buttonElement = screen.getByText(/Clique-moi/i);
-	expect(buttonElement).toBeInTheDocument();
+test('affiche le titre passè en prop', () => {
+	render(<Header title='Bienvenue !' />);
+	const headerElement = screen.getByText(/Bienvenu/i);
+	expect(headerElement).toBeInTheDocument();
 });
